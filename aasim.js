@@ -239,6 +239,7 @@ function start(evt)
 			}
 			for(i=0; i<attacker_battleships.length; i++)
 				attacker_stack.splice(attacker_battleships[i]-i,1); // remove battleship
+			
 		}
 		else if(combat_type=='naval')
 		{
@@ -299,8 +300,7 @@ function start(evt)
 	}//*/
 	
 	var ties=simnum-attacker_wins-defender_wins;
-	
-	
+		
 	// presentera resultat
 	$('results').update();
 	$('outcome').update();
@@ -311,6 +311,8 @@ function start(evt)
 	td.insert(new Element('div').update('Defender: '+defender_wins+' ('+Math.round(100*defender_wins/simnum)+'%)'));
 	td.insert(new Element('div').update('Ties: '+ties+' ('+Math.round(100*ties/simnum)+'%)'));
 	$('results').insert(td);*/
+	
+	$('outcome').insert('<h3>'+combat_type+' combat</h3>');
 	
 	var tr1=new Element('tr').insert(new Element('th').update('Probability'));
 	var tr2=new Element('tr').insert(new Element('th').update('#outcomes'));
@@ -336,8 +338,28 @@ function start(evt)
 		td.update(Math.abs(i-defender_sum0));
 		tr3.insert(td);
 		
+		if(i<defender_sum0)
+		{
+			temp_stack=defender_stack0.clone().reverse();
+		}
+		else
+		{
+			temp_stack=attacker_stack0.clone().reverse();
+		}
+		
+		ipcsum=0;
+		for(j=0; j<temp_stack.length; j++)
+		{
+			ipcsum+=units[temp_stack[j]].cost;
+		}
+		
+		ipcloss=ipcsum;
 		td=new Element('td');
-		td.update('..');
+		for(j=0; j<Math.abs(i-defender_sum0); j++)
+		{
+			ipcloss-=units[temp_stack.pop()].cost;
+		}
+		td.update(ipcloss);
 		tr4.insert(td);
 	});
 	
