@@ -17,25 +17,26 @@ var units=[
 	{name:'Bomber',     cost:15, attack:4, defend:1, 'type':'air'},
 	{name:'Carrier',    cost:18, attack:1, defend:3, 'type':'naval'},
 	{name:'Battleship', cost:24, attack:4, defend:4, 'type':'naval'},
+	{name:'Jet',        cost:12, attack:3, defend:5, 'type':'air'}
 ];
 
-var air_units=[4,5];
+var air_units=[4,5,8];
 
 var order={
-	'cost':[7,6,5,4,3,2,1,0],
-	'defense':[7,4,6,3,1,0,5,2],
-	'attack':[7,5,4,1,3,6,0,2]
+	'cost':[7,6,5,4,8,3,2,1,0],
+	'defense':[7,8,4,6,3,1,0,5,2],
+	'attack':[7,5,4,8,1,3,6,0,2]
 	};
 
 document.observe('dom:loaded', function() {
 	
-	$('delimiter').insert(new Element('td',{colspan:7}).update('\xa0'));
+	$('delimiter').insert(new Element('td',{colspan:8}).update('\xa0'));
 	
 	$('defender').insert(new Element('td',{id:'td_def_order'}));
 	$('attacker').insert(new Element('td',{id:'td_att_order'}));
 	$('defender_numbers').insert(new Element('td').update('\xa0'));
 	$('attacker_numbers').insert(new Element('td').update('\xa0'));
-	for(var i=0; i<=4; i++)
+	for(var i=0; i<=5; i++)
 	{
 		$('defender').insert(new Element('td',{id:'td_def_'+i}));
 		$('attacker').insert(new Element('td',{id:'td_att_'+i}));
