@@ -1,0 +1,132 @@
+body
+{
+	text-align: center;
+	font-family: monospace;
+	font-size: 16pt;
+}
+
+#board
+{
+	border: 2px solid black;
+}
+
+#board tr td
+{
+	border: 0;
+	text-align: right;
+	vertical-align: top;
+	padding: 8px;
+}
+
+#outcome tr td,th
+{
+	text-align: right;
+}
+
+#outcome tr td,th
+{
+	vertical-align: top;
+	font-size: 9pt;
+	border: 1px solid black;
+	padding: 2pt;
+}
+
+.bar
+{
+	background-color: blue;
+}
+
+#defender
+{
+//	background-color: #ffcc66;
+	background: url('defender.gif');
+}
+
+#defender_numbers
+{
+	//background-color: #ffcc66;
+	background: url('defender.gif');
+}
+
+#attacker
+{
+	//background-color: #666633;
+	background: url('attacker.gif');
+}
+
+#attacker_numbers
+{
+	//background-color: #666633;
+	background: url('attacker.gif');
+}
+
+#delimiter
+{
+	background: url('delimiter.gif');
+	//color: white;
+	height: 30px;
+	font-size: 8px;
+}
+
+#controls
+{
+	//background-color: #666633;
+	background: url('attacker.gif');
+}
+
+#defender_numbers td
+{
+	text-align: center;
+	vertical-align: middle;
+}
+
+div.def_number
+{
+	background-color: #336699;
+}
+
+div.att_number
+{
+	background-color: #cc3300;
+}
+
+div.number
+{
+	display: block;
+	color: #ffffff;
+	font-weight: bold;
+	font-size: 20pt;
+	font-family: verdana, sans-serif;
+	width: 40px;
+	height: 40px;
+	vertical-align: middle;
+	text-align: center;
+	-moz-border-radius: 4px;
+	float: right;
+}
+
+input.aa
+{
+	width: 20pt;
+	height: 20pt;
+}
+
+input.text
+{
+	font-family: monospace;
+	font-weight: bold;
+	font-size: 16pt;
+	border: 0;
+	background-color: lightgray;
+	height: 20pt;
+	margin-left: 4pt;
+	margin-bottom: 2px;
+}
+
+input.unit
+{
+	width: 20pt;
+	height: 20pt;
+	margin-left: 4pt;
+	margin-bottom: 2px;
+}
